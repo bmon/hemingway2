@@ -3,15 +3,19 @@
     <a href="{{ .Permalink }}">
       <h1 class="title">{{ .Title }}</h1>
     </a>
+  </div>
+  <div class="level-right level article-date-tags">
     {{ if not .Params.hidedate }}
-    <div class="level-item has-text-left">
-      <h2 class="subtitle is-small">{{ .Date.Format "January 2, 2006" }}</h2>
+    <div class="level-left">
+      <div class="level-item has-text-left">
+        <h2 class="subtitle is-small">{{ .Date.Format "January 2, 2006" }}</h2>
+      </div>
     </div>
     {{ end }}
-  </div>
-  <div class="level-right">
-    {{ if .Params.tags }}
-    {{ partial "tags" .Params.tags }}
-    {{ end }}
+    <div class="level-right">
+      {{ if .Params.tags }}
+        {{ partial "tags" .Params.tags }}
+      {{ end }}
+    </div>
   </div>
 </header>
